@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa História ♡ 2023 - 2026</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #050e1a;
+      --bg-ocean: #0a1c30;
+      --accent-blue: #7bb5e8;
+      --accent-soft: #b2d7f7;
+      --silver: #e2e8f0;
+      --text-light: #f0f6fc;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-cursive: 'Caveat', cursive;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-deep); color: var(--text-light); font-family: var(--font-sans); overflow-x: hidden; min-height: 100vh; }
+
+    /* Bolhas flutuantes */
+    .bubbles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
+    .bubble { position: absolute; bottom: -20px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; animation: floatUp linear infinite; }
+    @keyframes floatUp { 0% { transform: translateY(0); opacity: 0; } 50% { opacity: 0.6; } 100% { transform: translateY(-110vh); opacity: 0; } }
+
+    .screen { display: none; min-height: 100vh; width: 100%; padding: 20px; position: relative; z-index: 2; opacity: 0; transition: opacity 0.8s ease; }
+    .screen.active { display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 1; }
+    .section-container { max-width: 600px; width: 100%; margin: 0 auto; padding: 30px 15px; text-align: center; }
+
+    h1, h2 { font-family: var(--font-serif); font-weight: 300; color: #fff; }
+    h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    h2 { font-size: 1.8rem; color: var(--accent-soft); margin-bottom: 15px; }
+
+    p { font-size: 0.95rem; line-height: 1.8; color: var(--silver); margin-bottom: 15px; font-weight: 300; text-align: left; }
+    .cursive { font-family: var(--font-cursive); font-size: 1.6rem; color: var(--accent-soft); text-align: center; display: block; margin: 15px 0; }
+
+    .btn { background: rgba(123, 181, 232, 0.15); border: 1px solid var(--accent-blue); color: var(--text-light); padding: 14px 28px; border-radius: 30px; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease; margin-top: 15px; }
+    .btn:active { background: var(--accent-blue); color: var(--bg-deep); }
+
+    /* Estilo Polaroid */
+    .polaroid { background: #fff; padding: 10px 10px 25px 10px; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transform: rotate(-2deg); margin: 25px auto; max-width: 90%; }
+    .polaroid img { width: 100%; height: auto; border-radius: 2px; display: block; }
+    .polaroid-caption { color: #333; font-family: var(--font-cursive); font-size: 1.2rem; margin-top: 8px; text-align: center; }
+
+    /* Grid de Galeria */
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+    .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(123, 181, 232, 0.3); }
+
+    /* Água-viva */
+    .jellyfish-svg { width: 80px; height: 120px; margin-bottom: 15px; animation: floatJelly 4s ease-in-out infinite alternate; filter: drop-shadow(0 0 10px rgba(123,181,232,0.6)); }
+    @keyframes floatJelly { 0% { transform: translateY(0); } 100% { transform: translateY(-15px); } }
+
+    /* Feed principal */
+    #main-experience { display: none; opacity: 0; transition: opacity 1s ease; }
+    .story-section { padding: 50px 20px; border-bottom: 1px solid rgba(123, 181, 232, 0.1); }
+  </style>
+</head>
+<body>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://files.catbox.moe/adha4r.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="bubbles-container" id="bubbles"></div>
+
+  <section class="screen active" id="screen-1">
+    <div class="section-container">
+      <svg class="jellyfish-svg" viewBox="0 0 100 140" fill="none">
+        <path d="M50 20C25 20 10 40 10 60C25 65 35 55 50 60C65 55 75 65 90 60C90 40 75 20 50 20Z" fill="#b2d7f7" opacity="0.8"/>
+        <path d="M30 62Q25 90 35 120" stroke="#7bb5e8" stroke-width="2"/>
+        <path d="M50 62Q50 100 52 130" stroke="#7bb5e8" stroke-width="2"/>
+        <path d="M70 62Q75 90 65 120" stroke="#7bb5e8" stroke-width="2"/>
+      </svg>
+      <h1>Uma história que começou em 2023...</h1>
+      <span class="cursive">e que continua até hoje.</span>
+      <button class="btn" onclick="nextScreen('screen-1', 'screen-2')">Entrar</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-2">
+    <div class="section-container">
+      <h2>Antes de continuar...</h2>
+      <p style="text-align: center;">Essa história é só para você.</p>
+      <input type="password" id="passInput" style="width: 80%; padding: 12px; border-radius: 8px; border: 1px solid var(--accent-blue); background: #050e1a; color: #fff; text-align: center; margin: 15px 0; outline: none;" placeholder="Digite a senha">
+      <br>
+      <button class="btn" onclick="checkPassword()">Entrar na nossa história</button>
+      <p id="errorMsg" style="color: #f87171; font-size: 0.85rem; display: none; text-align: center; margin-top: 10px;">
+        Hmm... acho que essa lembrança é um pouquinho diferente. Tenta novamente. ♡
+      </p>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-3">
+    <div class="section-container">
+      <h2>Você chegou até aqui. ♡</h2>
+      <p style="text-align: center;">Preparei isso para guardar um pouquinho da nossa história.<br>De 2023 até 2026.</p>
+      <button class="btn" onclick="startExperience()">Tocar o nosso disco & Iniciar ♫</button>
+    </div>
+  </section>
+
+  <main id="main-experience">
+
+    <section class="story-section">
+      <div class="section-container">
+        <h2>2023</h2>
+        <span class="cursive">O começo de tudo...</span>
+
+        <div class="polaroid">
+          <img src="https://i.ibb.co/spndV1WT/IMG-8512.png" alt="Foto 2023">
+          <div class="polaroid-caption">A20s e os primeiros momentos...</div>
+        </div>
+
+        <p>Fala bran, eu quero te dizer que eu nunca imaginaria que a gente chegaria até aqui. Pós ensino médio a gente já viveu tanta coisa junto! Eu acho que uma das melhores coisas foi eu ter descobri que tu fingiu que não sabia onde era o lugar que tu comprou teu sapato só pra ter minha presença e de Laissa.</p>
+        
+        <p>E quando a gente interagiu pela primeira vez, tu tava com seu A20s, ele caiu do teu bolso e eu falei bem assim: “tu não tem medo de quebrar não?”. Você falou que era pra ficar tranquila que essa não era a primeira vez.</p>
+
+        <p>Quando você virou líder de classe e eu precisei salvar teu número e ficar puxando teu saco em relação à briga tua e de Ruth porque na minha cabeça era uma forma da gente se aproximar mais... eu acho que esse tá sendo o texto mais gay que eu estou fazendo, nada contra sabe... 😂♡</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-container">
+        <h2>2024</h2>
+        <span class="cursive">Mais momentos, mais histórias.</span>
+
+        <div class="polaroid" style="transform: rotate(2deg);">
+          <img src="https://i.ibb.co/XkrmTx7M/IMG-8513.png" alt="Foto 2024">
+          <div class="polaroid-caption">Inesquecível ♡</div>
+        </div>
+
+        <p>Em 2024 eu fiquei minhas férias toda pensando como ia ser esse tempo que a gente ficou afastado. Pra mim a gente ia voltar a ser desconhecidos novamente, mas foi totalmente o contrário!</p>
+
+        <p>Foi o ano onde a gente mais inventou de brincar, de se divertir, o ano que a gente mais riu e um ano de acontecimentos inesquecíveis né (12 de julho). A gente sempre tava junto apesar de qualquer circunstância.</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-container">
+        <h2>2026</h2>
+        <span class="cursive">Até aqui... e o ciclo se mantém.</span>
+
+        <div class="polaroid" style="transform: rotate(-1deg);">
+          <img src="https://i.ibb.co/GvqGJvVs/IMG-8514.png" alt="Foto 2026">
+          <div class="polaroid-caption">Irmãs pra vida toda ♡</div>
+        </div>
+
+        <p>2026 foi um ano que começou do babado! Revelações logo no começo do ano e aí eu fico com a mesma sensação de que a gente ia voltar a ser desconhecida... não sei porque isso chega até a ser estranho.</p>
+
+        <p>Mas foi um ano que eu sabia que a gente ia ultrapassar o ciclo do ensino médio, continuando sendo amigas. Você é mais que uma amiga pra mim, você é minha irmã!</p>
+
+        <p>Teve uma fase mesmo que eu tava até tendo que tratar outras pessoas mal porque não parava de falar com tu, aí foi aí que eu me enjoei da tua cara... mas ainda assim eu te amo! ♡</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-container">
+        <h2>Alguns dos Nossos Momentos</h2>
+        <span class="cursive">Memórias inesquecíveis</span>
+
+        <div class="gallery-grid">
+          <img src="https://i.ibb.co/Y7SGxBc6/IMG-8515.png" alt="Momento 1">
+          <img src="https://i.ibb.co/gFDJb03S/IMG-8516.png" alt="Momento 2">
+          <img src="https://i.ibb.co/HLzpJY37/IMG-8517.png" alt="Momento 3">
+          <img src="https://i.ibb.co/5hrBC0mb/IMG-8518.png" alt="Momento 4">
+          <img src="https://i.ibb.co/60Kjr4Zp/IMG-8519.png" alt="Momento 5">
+          <img src="https://i.ibb.co/XxsXPJKp/IMG-8520.png" alt="Momento 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section" style="text-align: center;">
+      <div class="section-container">
+        <svg class="jellyfish-svg" viewBox="0 0 100 140" fill="none">
+          <path d="M50 20C25 20 10 40 10 60C25 65 35 55 50 60C65 55 75 65 90 60C90 40 75 20 50 20Z" fill="#b2d7f7" opacity="0.9"/>
+        </svg>
+        <h2>Água Viva</h2>
+        <span class="cursive" style="font-size: 1.8rem;">“Algumas histórias são como o mar. A gente entra sem saber exatamente onde vai chegar.”</span>
+      </div>
+    </section>
+
+    <section class="story-section" style="text-align: center; padding-bottom: 80px;">
+      <div class="section-container">
+        <div class="polaroid" style="transform: rotate(1deg); margin-bottom: 30px;">
+          <img src="https://i.ibb.co/Fk7r12Gj/IMG-8521.png" alt="Foto Final">
+        </div>
+
+        <p style="text-align: center;" class="cursive">De 2023 até 2026...</p>
+        <p style="text-align: center;">Quantas histórias cabem em quatro anos?</p>
+        <h2 style="margin-top: 20px;">Obrigado por fazer parte da minha vida. ♡</h2>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const CORRECT_PASSWORD = "2023";
+
+    function createBubbles() {
+      const container = document.getElementById('bubbles');
+      for (let i = 0; i < 20; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        const size = Math.random() * 10 + 4 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.animationDuration = Math.random() * 8 + 5 + 's';
+        bubble.style.animationDelay = Math.random() * 4 + 's';
+        container.appendChild(bubble);
+      }
+    }
+
+    function nextScreen(currentId, nextId) {
+      const current = document.getElementById(currentId);
+      const next = document.getElementById(nextId);
+      current.style.opacity = '0';
+      setTimeout(() => {
+        current.classList.remove('active');
+        next.classList.add('active');
+        setTimeout(() => { next.style.opacity = '1'; }, 50);
+      }, 800);
+    }
+
+    function checkPassword() {
+      const input = document.getElementById('passInput').value;
+      const errorMsg = document.getElementById('errorMsg');
+      if (input === CORRECT_PASSWORD) {
+        errorMsg.style.display = 'none';
+        nextScreen('screen-2', 'screen-3');
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }
+
+    function startExperience() {
+      const audio = document.getElementById('bgMusic');
+      if(audio) { audio.play().catch(() => {}); }
+
+      const screen3 = document.getElementById('screen-3');
+      const mainExp = document.getElementById('main-experience');
+      screen3.style.opacity = '0';
+      setTimeout(() => {
+        screen3.classList.remove('active');
+        screen3.style.display = 'none';
+        mainExp.style.display = 'block';
+        setTimeout(() => {
+          mainExp.style.opacity = '1';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      }, 800);
+    }
+
+    window.onload = createBubbles;
+  </script>
+</body>
+</html>
