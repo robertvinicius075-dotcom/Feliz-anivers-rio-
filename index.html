@@ -54,7 +54,7 @@
     .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(123, 181, 232, 0.3); }
 
     /* Água-viva */
-    .jellyfish-svg { width: 80px; height: 120px; margin-bottom: 15px; animation: floatJelly 4s ease-in-out infinite alternate; filter: drop-shadow(0 0 10px rgba(123,181,232,0.6)); }
+    .jellyfish-svg { width: 140px; height: 180px; margin: 0 auto 20px auto; display: block; animation: floatJelly 4s ease-in-out infinite alternate; filter: drop-shadow(0 0 15px rgba(123,181,232,0.8)); }
     @keyframes floatJelly { 0% { transform: translateY(0); } 100% { transform: translateY(-15px); } }
 
     /* Feed principal */
@@ -191,8 +191,14 @@
 
     <section class="story-section" style="text-align: center;">
       <div class="section-container">
-        <svg class="jellyfish-svg" viewBox="0 0 100 140" fill="none">
-          <path d="M50 20C25 20 10 40 10 60C25 65 35 55 50 60C65 55 75 65 90 60C90 40 75 20 50 20Z" fill="#b2d7f7" opacity="0.9"/>
+        <svg class="jellyfish-svg" viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 15C20 15 5 40 5 65C20 72 35 58 50 65C65 58 80 72 95 65C95 40 80 15 50 15Z" fill="#b2d7f7" opacity="0.85"/>
+          <path d="M50 20C28 20 15 40 15 60C28 65 38 53 50 60C62 53 72 65 85 60C85 40 72 20 50 20Z" fill="#7bb5e8" opacity="0.4"/>
+          <path d="M25 67Q15 95 30 125T20 155" stroke="#b2d7f7" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M38 66Q48 95 35 125T45 155" stroke="#7bb5e8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M50 67Q52 100 48 130T52 158" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+          <path d="M62 66Q52 95 65 125T55 155" stroke="#7bb5e8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M75 67Q85 95 70 125T80 155" stroke="#b2d7f7" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
         <h2>Água Viva</h2>
         <span class="cursive" style="font-size: 1.8rem;">“É tão bom saber que alguém que me conhece assim tão bem existe” - Ana vitoria </span>
